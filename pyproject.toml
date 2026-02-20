@@ -1,0 +1,27 @@
+[project]
+name = "mojo-playground"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+  { name = "Miguel Villa Floran", email = "miguel.villafloran@gmail.com" },
+]
+requires-python = ">=3.11, <3.14"
+readme = "README.md"
+# license = { file = "LICENSE" }
+
+dependencies = [
+  "max[benchmark]>=26.2.0.dev2026021805",
+  "mojo>=0.26.2.0.dev2026021805",
+  "mojokernel>=26.1.0.post3",
+]
+
+[dependency-groups]
+dev = ["pre-commit", "ipykernel"]
+
+[tool.uv.sources]
+max = [{ index = "modular-nightly", marker = "sys_platform == 'linux'" }]
+mojo = [{ index = "modular-nightly", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "modular-nightly"
+url = "https://whl.modular.com/nightly/simple/"
